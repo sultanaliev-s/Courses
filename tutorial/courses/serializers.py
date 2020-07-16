@@ -26,11 +26,12 @@ class CourseSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         contacts_data = validated_data.pop('contacts')
+        branches_data = validated_data.pop('branches')
+
         course = Course.objects.create(**validated_data)
         for contact_data in contacts_data:
             Course.objects.create(course=course, **contact_data)
 
-        branches_data = validated_data.pop('branches')
         for branch_data in branches_data:
             Course.objects.create(course=course, **branch_data)
         return course
