@@ -24,15 +24,6 @@ class CourseSerializer(serializers.ModelSerializer):
         model = Course
         fields = ['name', 'description', 'category', 'logo', 'contacts', 'branches']
     
-    # def update(self, instance, validated_data):
-    #     instance.title = validated_data.get('title', instance.title)
-    #     instance.code = validated_data.get('code', instance.code)
-    #     instance.linenos = validated_data.get('linenos', instance.linenos)
-    #     instance.language = validated_data.get('language', instance.language)
-    #     instance.style = validated_data.get('style', instance.style)
-    #     instance.save()
-    #     return instance
-
     def create(self, validated_data):
         contacts_data = validated_data.pop('contacts')
         branches_data = validated_data.pop('branches')
@@ -45,3 +36,27 @@ class CourseSerializer(serializers.ModelSerializer):
             Branch.objects.create(course=course, **branch_data)
 
         return course
+
+    def update(self, instance, validated_data):
+        contacts_data = validated_data.pop('contacts')
+        branches_data = validated_data.pop('branches')
+
+        instance.name = validated_data.get('name', instance.name)
+        instance.description = validated_data.get('description', instance.description)
+        instance.category = validated_data.get('category', instance.category)
+        instance.logo = validated_data.get('logo', instance.logo)
+        instance.save()
+
+        for contact_data in instance.contacts.all():
+            contact_data.delete()
+
+        for contact_data in contacts_data:
+            Contact.objects.create(course=instance, **contact_data)
+
+        for branch_data in instance.branches.all():
+            branch_data.delete()
+
+        for branch_data in branches_data:
+            Branch.objects.create(course=instance, **branch_data)
+
+        return instance
