@@ -13,9 +13,9 @@ class Category(models.Model):
 
 class Course(models.Model):
     name = models.CharField('name of the course', max_length = 200)
-    description = models.TextField('descriptopn of the course')
+    description = models.TextField('description of the course')
     category = models.ForeignKey(Category, to_field="name", on_delete = models.CASCADE)
-    logo = models.CharField('idk', max_length = 200)
+    logo = models.CharField('image path', max_length = 200)
     
     def __str__(self):
         return self.name
