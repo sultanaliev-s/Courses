@@ -27,7 +27,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'courses.apps.CoursesConfig'
+    'courses.apps.CoursesConfig',
     'whitenoise.runserver_nostatic',
 ]
 
