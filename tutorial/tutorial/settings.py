@@ -72,6 +72,7 @@ DATABASES = {
         'PASSWORD': 'gz+*66_?t)FH_2]&j-yHj',
         'HOST': 'localhost',
         'PORT': '',
+     }
 }
 
 
