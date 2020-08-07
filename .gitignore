@@ -4,6 +4,7 @@ venv/
 .env
 # VSCode
 .vscode/
+local_settings.py 
 #gen
 *.pyc
 *~
