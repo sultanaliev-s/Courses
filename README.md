@@ -42,7 +42,7 @@ Go to localhost:
 
 APIs for:
 * Course List [/courses/](https://private-a67b02-coursesapi4.apiary-mock.com/courses/)
-* Course Detail [/course/{course_id}](https://private-a67b02-coursesapi4.apiary-mock.com/courses/course_id/)
+* Course Detail [/courses/{course_id}](https://private-a67b02-coursesapi4.apiary-mock.com/courses/course_id/)
     
 ## Deployment
 
