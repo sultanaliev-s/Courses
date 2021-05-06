@@ -27,7 +27,6 @@ pip install -r requirements.txt
 
 There is an overview on how it works:
 ```
-cd courses_app
 python manage.py runserver
 ```
 Go to localhost:
