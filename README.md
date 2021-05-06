@@ -58,4 +58,4 @@ There are no other versions
 
 ## Authors
 
-* <b>Sardar Sultanaliev</b> - *initial work* - [pawtny](https://github.com/pawtny)
+* <b>Sardar Sultanaliev</b> - *initial work* - [sultanaliev-s](https://github.com/sultanaliev-s)
